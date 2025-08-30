@@ -1,332 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POWERBALL ($PBALL) - The Crypto Lottery on Solana</title>
-    
-    <style>
-        :root {
-            --primary-color: #ff0000;
-            --secondary-color: #ffffff;
-            --dark-bg-color: #1a1a1a;
-            --light-text-color: #f0f0f0;
-            --font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            font-family: var(--font-family);
-            margin: 0;
-            padding: 0;
-            color: var(--light-text-color);
-            background-color: #000;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            padding: 60px 20px;
-            color: var(--secondary-color);
-            border-radius: 0 0 50% 50% / 0 0 10% 10%;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        header .logo {
-            width: 200px;
-            height: 200px;
-            background-color: var(--secondary-color);
-            border-radius: 50%;
-            border: 5px solid var(--secondary-color);
-            object-fit: contain;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin: 10px 0 30px;
-        }
-
-        .buy-button {
-            display: inline-block;
-            background-color: var(--dark-bg-color);
-            color: var(--secondary-color);
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .buy-button:hover {
-            background-color: #333;
-            transform: scale(1.05);
-        }
-
-        .section {
-            padding: 60px 20px;
-        }
-
-        .dark-bg {
-            background-color: var(--dark-bg-color);
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-top: 0;
-            margin-bottom: 30px;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .info-grid {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .info-item {
-            background-color: #333;
-            padding: 20px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            text-align: left;
-            min-width: 250px;
-        }
-
-        .info-item h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-
-        .info-item ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .info-item li {
-            margin-bottom: 10px;
-        }
-
-        .note {
-            font-style: italic;
-            margin-top: 30px;
-            opacity: 0.8;
-        }
-
-        .steps {
-            list-style: none;
-            padding: 0;
-            counter-reset: step-counter;
-        }
-
-        .steps li {
-            background-color: #333;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .steps li span {
-            font-size: 2rem;
-            margin-right: 20px;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .benefits {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .benefits li {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            text-align: left;
-        }
-
-        .benefits .icon {
-            font-size: 2rem;
-            margin-right: 15px;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 40px 20px;
-            border-radius: 10% 10% 0 0 / 10% 10% 0 0;
-        }
-
-        .social-links a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.3s ease;
-        }
-
-        .social-links a:hover {
-            opacity: 0.8;
-        }
-
-        .social-links img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        footer p {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .info-grid {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$PBALL | Powerball Crypto Lottery</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: #0d0d0d; 
+      color: #fff; 
+      line-height: 1.6; 
+    }
+    header { 
+      background: linear-gradient(135deg, #ff0000, #b30000); 
+      text-align: center; 
+      padding: 2rem 1rem; 
+      box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    }
+    header img { width: 140px; margin-bottom: 1rem; }
+    header h1 { font-size: 2.5rem; font-weight: bold; }
+    header p { font-size: 1.2rem; margin-top: 0.5rem; }
+    section { max-width: 900px; margin: auto; padding: 3rem 1rem; }
+    section h2 { 
+      color: #ff3333; 
+      font-size: 1.8rem; 
+      margin-bottom: 1rem; 
+      text-align: center; 
+      text-transform: uppercase;
+    }
+    .card { 
+      background: #1a1a1a; 
+      border-radius: 12px; 
+      padding: 2rem; 
+      margin-bottom: 2rem; 
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); 
+    }
+    ul, ol { padding-left: 1rem; }
+    ul li, ol li { margin-bottom: 0.6rem; }
+    footer { 
+      background: #b30000; 
+      text-align: center; 
+      padding: 1rem; 
+      font-size: 0.9rem; 
+    }
+    a { color: #fff; text-decoration: none; font-weight: bold; }
+    a:hover { text-decoration: underline; }
+    .btn {
+      display: inline-block;
+      margin: 1rem 0.5rem;
+      padding: 0.9rem 1.7rem;
+      background: #ff3333;
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(255,0,0,0.4);
+    }
+    .btn:hover { background: white; color: #e60000; }
+    .center { text-align: center; }
+  </style>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <img src="powerball-logo.jpg" alt="Powerball Logo" />
+    <h1>🎱 Welcome to Powerball ($PBALL) 🎱</h1>
+    <p>Your ticket to the crypto lottery on Solana.</p>
+  </header>
 
-    <header>
-        <div class="container">
-            <img src="https://i.imgur.com/k9b6N4u.png" alt="POWERBALL Logo" class="logo">
-            <h1>POWERBALL ($PBALL)</h1>
-            <h2>Your ticket to the crypto lottery.</h2>
-            <a href="https://pump.fun/coin/EUPM9w6v63dQZZY3cH4T6f2UEHjsEQq9mYoRWKeopump" class="buy-button" target="_blank">BUY ON PUMPFUN</a>
-        </div>
-    </header>
+  <!-- What is PBALL -->
+  <section>
+    <h2>💡 What is $PBALL?</h2>
+    <div class="card">
+      <p>
+        POWERBALL is the first meme coin lottery on Solana. Holding isn’t just stacking tokens — 
+        it’s your entry ticket into weekly jackpot airdrops.
+      </p>
+      <p>
+        Every Friday, random $PBALL holders are drawn and the jackpot pool is airdropped live. 
+        No scratchers, no lines — just crypto’s Powerball.
+      </p>
+    </div>
+  </section>
 
-    <main>
-        <section id="what-is-pball" class="section">
-            <div class="container">
-                <h2>💡 What is $PBALL?</h2>
-                <p>POWERBALL is the first meme coin lottery on Solana. Holding isn’t just stacking tokens — it’s your entry ticket into weekly jackpot airdrops.</p>
-                <p>Every Friday, random $PBALL holders are drawn and the jackpot pool is airdropped live.</p>
-                <p>No scratchers, no lines — just crypto’s Powerball. 🎱</p>
-            </div>
-        </section>
-        
-        <section id="tokenomics" class="section dark-bg">
-            <div class="container">
-                <h2>🪙 Tokenomics</h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <h3>Supply:</h3>
-                        <p>1,000,000,000 (1B)</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>Taxes (buy/sell):</h3>
-                        <ul>
-                            <li>🎲 5% → Jackpot Pool</li>
-                            <li>💧 2% → Liquidity</li>
-                            <li>📢 1% → Marketing</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="note">The jackpot is funded automatically and distributed to random holders.</p>
-            </div>
-        </section>
-        
-        <section id="lottery-mechanism" class="section">
-            <div class="container">
-                <h2>🎲 Lottery Mechanism</h2>
-                <ol class="steps">
-                    <li><span>1️⃣</span> Snapshot of holders every Friday, 9 PM EST</li>
-                    <li><span>2️⃣</span> Random wallets selected (RNG/VRF)</li>
-                    <li><span>3️⃣</span> Jackpot pool airdropped straight to winners</li>
-                </ol>
-                <p class="note">The more trading volume → the bigger the jackpot.</p>
-            </div>
-        </section>
-        
-        <section id="why-hold" class="section dark-bg">
-            <div class="container">
-                <h2>🔥 Why Hold $PBALL?</h2>
-                <ul class="benefits">
-                    <li><span class="icon">💰</span> Weekly chance to win free tokens</li>
-                    <li><span class="icon">🎥</span> Live-streamed jackpot draws</li>
-                    <li><span class="icon">🌐</span> Community-driven memes + hype</li>
-                    <li><span class="icon">📈</span> Sustainable liquidity + growth</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://t.me/powerballcoins" target="_blank">
-                    <img src="https://i.imgur.com/Kx4q6B3.png" alt="Telegram Icon">
-                    Join the Movement on Telegram
-                </a>
-            </div>
-            <p>&copy; 2025 POWERBALL. All Rights Reserved.</p>
-        </div>
-    </footer>
+  <!-- Tokenomics -->
+  <section>
+    <h2>🪙 Tokenomics</h2>
+    <div class="card">
+      <ul>
+        <li>• Supply: <b>1,000,000,000 (1B)</b></li>
+        <li>• 🎲 5% → Jackpot Pool</li>
+        <li>• 💧 2% → Liquidity</li>
+        <li>• 📢 1% → Marketing</li>
+        <li>• Jackpot funded automatically → distributed to random holders.</li>
+      </ul>
+    </div>
+  </section>
 
-    <script>
-        // A minimal script for potential future interactivity.
-        // Currently, this code is not strictly necessary but provides a good
-        // starting point for adding features like animations, modal pop-ups,
-        // or fetching live data.
-
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("POWERBALL website loaded successfully!");
-
-            // Example of a simple interaction:
-            const buyButton = document.querySelector('.buy-button');
-            if (buyButton) {
-                buyButton.addEventListener('click', () => {
-                    console.log("Buy button clicked. Redirecting to Pump.fun.");
-                });
-            }
-        });
-    </script>
-</body>
-</html>    </div>
+  <!-- Lottery -->
+  <section>
+    <h2>🎲 Lottery Mechanism</h2>
+    <div class="card">
+      <ol>
+        <li>1️⃣ Snapshot of holders every Friday, 9 PM EST</li>
+        <li>2️⃣ Random wallets selected (RNG/VRF)</li>
+        <li>3️⃣ Jackpot pool airdropped straight to winners</li>
+      </ol>
+      <p><i>The more trading volume → the bigger the jackpot.</i></p>
+    </div>
   </section>
 
   <!-- Why Hold -->
